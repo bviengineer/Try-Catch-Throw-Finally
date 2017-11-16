@@ -2,18 +2,26 @@
 // 2. Throw an error
 // 3. Handle the error
 
+function styleMyOutput(){
+    displayDiv.style.color = "white";
+    displayDiv.style.backgroundColor = "black";
+    displayDiv.style.fontSize = "3rem"
+}
+
 try {
-    var userInput = Number(prompt("enter any whole number"));
+    var userInput = prompt("enter any whole number");
     if(isNaN(userInput) == true){
-        alert("you did not enter a number");
+        throw "user entered an invalid data type into prompt";
     } else {
-        document.querySelector("#displayDiv").innerHTML = 'You entered the number ' + '"' + userInput + '"';
-        displayDiv.style.color = "white";
-        displayDiv.style.backgroundColor = "black";
-        displayDiv.style.fontSize = "5rem" 
+        document.querySelector("#displayDiv").innerHTML = 'You entered the number ' + '"' + userInput + '"'; 
+        styleMyOutput();
+        
     }
 } catch(error){
-    console.log("user entered an invalid data type into prompt");
+    if(error == "user entered an invalid data type into prompt"){
+        document.querySelector("#displayDiv").innerHTML = "'" + userInput + "'" + " is not a valid number. Please referesh the page and try again.";
+        styleMyOutput();
+    }
 
 } finally {
     console.log("this is the end of the error handling via the: 'Try-Catch-Throw-Finally' method");
