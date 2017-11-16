@@ -2,6 +2,7 @@
 // 2. Throw an error
 // 3. Handle the error
 
+try {
     var userInput = Number(prompt("enter any whole number"));
     if(isNaN(userInput) == true){
         alert("you did not enter a number");
@@ -11,4 +12,10 @@
         displayDiv.style.backgroundColor = "black";
         displayDiv.style.fontSize = "5rem" 
     }
+} catch(error){
+    console.log("user entered an invalid data type into prompt");
+
+} finally {
+    console.log("this is the end of the error handling via the: 'Try-Catch-Throw-Finally' method");
+}
 
