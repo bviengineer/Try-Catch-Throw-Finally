@@ -17,8 +17,8 @@ try {
         styleMyOutput();
         
     }
-} catch(error){
-    if(error == "user entered an invalid data type into prompt"){
+} catch(error){ //error is referencing the message following the throw keyword
+    if(error){
         document.querySelector("#displayDiv").innerHTML = "'" + userInput + "'" + " is not a valid number. Please referesh the page and try again.";
         styleMyOutput();
     }
